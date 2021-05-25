@@ -1,6 +1,6 @@
 def produccion = [:]
             produccion.name = 'curso'
-            produccion.host = '172.17.0.2'
+            produccion.host = '172.17.0.4'
             produccion.user = 'root'
             produccion.password = 'root'
             produccion.allowAnyHosts = true
@@ -43,7 +43,8 @@ pipeline {
             steps {
                 sh "echo 'Creo el contenedor'"
                 dir('contenedor') {
-                    withCredentials([usernamePassword(credentialsId: 'gitprueba', passwordVariable: 'password', usernameVariable: 'usuario')]) {
+                    withCredentials([usernamePassword(credentialsId: 'gitDocker', passwordVariable: 'Claudia2009?', usernameVariable: 'morgadodesarrollador@gmail.com')]) {
+                       
                         git 'https://github.com/pruebainf/dockerimage-from-jenkins-pipelin.git'
                         sh('''
                             cp ../codigo/webapp/target/webapp.war .
